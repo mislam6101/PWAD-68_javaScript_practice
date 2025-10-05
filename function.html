@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display{
+            width: 130px;
+            height: 60px;
+            background-color: aqua;
+            color: rgb(161, 71, 245);
+            padding: 70px;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Function</h2>
+    <p id="display"></p>
+
+    <script>
+        function welcome(name){
+            name = prompt("Enter you name: ");
+            document.write(name + " Welcome To JavaScript.");
+        }
+
+        // welcome("Aarif");
+
+        function sumFunc(a,b){
+            a = prompt("Enter First Number: ");
+            b = prompt("Enter Second Number: ");
+            a = parseInt(a);
+            b = parseInt(b);
+            document.getElementById("display").innerHTML = "Total is : " + (a+b);
+        }
+
+        function multiFunc(a,b){
+            a = prompt("Enter First Number: ");
+            b = prompt("Enter Second Number: ");
+            document.getElementById("display").innerHTML = "Multiplication is : " + (a*b );
+        }
+
+        function diviFunc(a,b){
+            a = prompt("Enter First Number: ");
+            b = prompt("Enter Second Number: ");
+            document.getElementById("display").innerHTML = "Division is : " + (a/b );
+        }
+    </script>
+
+    <button onclick="welcome()">Welcome</button><br><br>
+    <button onclick="sumFunc()">Sum</button><br><br>
+    <button onclick="multiFunc()">Multiplication</button><br><br>
+    <button onclick="diviFunc()">Division</button>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        #display{
+            margin-top: 30px;
+            height: 80px;
+            width: 140 px;
+            background-color: aqua;
+            padding: 60px;
+
+        }
+    </style>
+</head>
+<body>
+    <h3>Registration Form</h3>
+    <form action="" name="rgs">
+        <label for="">Full-Name:</label><br>
+        <input type="text" name="fullname" id="" placeholder="Enter Your Name: "><br><br>
+        <label for="">Gender:</label><br>
+        <input type="radio" name="gender" id="" value="male">Male <br>
+        <input type="radio" name="gender" id="" value="female">Female <br><br>
+
+        <label for="">District:</label><br>
+        <select name="district" id="">
+            <option value="" selected disabled>Select One</option>
+            <option >Dhaka</option>
+            <option >Gazipur</option>
+            <option >Manikgaon</option>
+            <option >Narayengang</option>
+        </select><br><br>
+
+        <label for="">Address:</label><br>
+        <textarea name="address" id="" placeholder="Enter Your Address: "></textarea><br><br>
+
+        <button type="button" onclick="form_handle()">Registration</button>
+
+    </form>
+    <p id="display"></p>
+    <script>
+        function form_handle(){
+            let fname = document.rgs.fullname.value;
+            let gender = document.rgs.gender.value;
+            let district = document.rgs.district.value;
+            let address = document.rgs.address.value;
+            let output= "Welcome " + fname + " to my page. " + "Hei you are " + gender + "." + district + " is your district. " + "You are in " + address + " now.";
+            document.getElementById("display").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
