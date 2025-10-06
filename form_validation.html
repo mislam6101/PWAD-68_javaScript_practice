@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        #error, #error1, #error2, #error3{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Form</h2>
+    <form action="" name="form" onsubmit=" return frm_validate()">
+        <label for="">Name:</label><br>
+        <input type="text" name="name" id="" placeholder="Enter Your Name:">
+        <p id="error"></p><br>
+
+        <label for="">Address:</label><br>
+        <textarea name="address" id="" placeholder="Your Address:"></textarea>
+        <p id="error1"></p><br>
+
+        <label for="">E-mail:</label><br>
+        <input type="email" name="email" id="" placeholder="name@email.com">
+        <p id="error2"></p><br>
+
+        <label for="">Contact Number:</label><br>
+        <input type="number" name="number" id="" placeholder="+8801234567891">
+        <p id="error3"></p><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function frm_validate() {
+            let name = document.form.name.value;
+            let address = document.form.address.value;
+            let email = document.form.email.value;
+            let contact = document.form.number.value;
+            if(name == ""){
+                // alert("Please enter your name.");
+                document.getElementById("error").innerHTML = "Please enter your name.";
+                return false;
+            }
+            else{
+                document.getElementById("error").innerHTML = "";
+            }
+            if(address == ""){
+                // alert("Please enter your address.");
+                document.getElementById("error1").innerHTML = "Please enter your address.";
+                return false;
+            }
+            else{
+                document.getElementById("error1").innerHTML = "";
+            }
+            if(email == ""){
+                // alert("Please enter your email.");
+                document.getElementById("error2").innerHTML = "Please enter your email.";
+                return false;
+            }
+            else{
+                document.getElementById("error2").innerHTML = "";
+            }
+            if(contact == ""){
+                // alert("Please enter your contact.");
+                document.getElementById("error3").innerHTML = "Please enter your contact.";
+                return false;
+            }
+            else{
+                document.getElementById("error3").innerHTML = "";
+            }
+            alert("Submitted.");
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
