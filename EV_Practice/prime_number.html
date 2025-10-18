@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function primeNum(n){
+            if (n === 0){
+                return n + " is Zero";
+            }
+            else if(n === 1){
+                return n + " is not a Prime Number";
+            }
+            else if(n === 2){
+                return n + " is a Prime Number";
+            }
+            else{
+                for(let x = 2; x < n; x++){
+                    if(n % x === 0){
+                        return n + " is not a Prime Number";
+                    }
+                }
+            }
+            return n + " is a Prime Number"
+        }
+        
+        document.write(primeNum(prompt("Enter Your Number : ")));
+    </script>
+</body>
+</html>
