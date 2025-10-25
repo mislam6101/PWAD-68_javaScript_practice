@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let samp1, samp2;
+        samp1 = new Image();
+        samp1.src = "../images/download.jpeg";
+        samp2 = new Image();
+        samp2.src = "../images/360_F_604864625_XPWUiC0B56niKuf2mfI43vuUQa0bszOi.jpg";
+
+        function swtc1() {
+            document.sample.src = samp1.src;
+          }
+        function swtc2(){
+            document.sample.src = samp2.src;
+        }
+    </script>
+    <a href="#" onmouseover="swtc1()" onmouseout="swtc2()">
+        <img src="../images/360_F_604864625_XPWUiC0B56niKuf2mfI43vuUQa0bszOi.jpg" alt="" name="sample">
+    </a>
+</body>
+</html>

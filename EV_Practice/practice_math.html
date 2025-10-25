@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let tax = .05;
+        function addTax(item) {
+            let total = item + (item * tax);
+            let NewTotal = Math.floor(total);
+            let fraction = Math.round(total * 100) % 100;
+            if (fraction<10){
+                fraction = "0" + fraction;
+            }
+            total = NewTotal + "." + fraction;
+            alert("Your total is $" + total);
+        }
+    </script>
+    <a href="#" onclick="addTax(6.22)";>Click for Total</a>
+</body>
+
+</html>

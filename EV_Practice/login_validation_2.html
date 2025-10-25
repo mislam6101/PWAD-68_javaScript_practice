@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Validation</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form action="" name="login_form">
+        <label for="">Full Name :</label><br>
+        <input type="text" name="name" id="" placeholder="Enter Your Name"><br><br>
+        <label for="">Password :</label><br>
+        <input type="password" name="password" id="" placeholder="Enter Your Password"><br><br>
+        <label for="">Confirm Password :</label><br>
+        <input type="password" name="conf_pass" id="" placeholder="Retype Your Password"><br><br>
+        <button type="button" onclick="loginValidation()">Log In</button>
+        <p id="display" style="color: green;"></p>
+    </form>
+    <script>
+        function loginValidation(){
+            let fname, pass, cPass;
+            fname  = document.login_form.name.value;
+            pass = document.login_form.password.value;
+            cPass = document.login_form.conf_pass.value;
+
+            let errmsg = "";
+
+            if(fname == ""){
+                errmsg += "Please Fill The Field.\n";
+            }
+            else if(fname.length < 5){
+                errmsg += "Must be 5 Charecter.\n";
+            }
+            else if(pass == ""){
+                errmsg += "Please Fill The Field.\n";
+            }
+            else if(pass.length < 7){
+                errmsg += "Password Atleast Entire 7 Charecter.\n";
+            }
+            else if(cPass == ""){
+                errmsg += "Please Fill The Field.";
+            }
+            else if(pass != cPass){
+                errmsg += "Password Dosen't Match";
+            }
+            if(errmsg != ""){
+                alert(errmsg);
+            }
+            else{
+                document.getElementById("display").innerHTML= "Login Succesful.";
+            }
+        }
+    </script>
+</body>
+</html>

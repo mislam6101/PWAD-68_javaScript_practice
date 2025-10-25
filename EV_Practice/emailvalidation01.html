@@ -8,11 +8,12 @@
 <body>
     <form action="" name="myform">
         <label for="">Email : </label><br>
-        <input type="text" name="email" id="" placeholder="name@email.com"><br><br>
+        <input type="text" name="email" id="" placeholder="name@email.com">
+        <p id="error1" style="color: red;"></p><br>
 
         <label for="">Confirm Email : </label><br>
         <input type="text" name="confirmEmail" id="" placeholder="Retype Your Email">
-        <br><br>
+        <p id="error2" style="color: red;"></p><br>
         <input type="button" name="" onclick="emailvalidation()" id="" value="Submit">
     </form>
 
@@ -20,13 +21,13 @@
         function emailvalidation(){
             let pattern = /[A-z-9._]+@[A-z0-9.-]+\.[A-z]{2,4}$/i;
             if(document.myform.email.value.search(pattern) == -1){
-                alert("Please enter a valid email.") 
+                document.getElementById("error1").innerHTML = "Please enter a valid email"; 
             }
             else if(document.myform.confirmEmail.value != document.myform.email.value){
-                alert("Email dosen't match.")
+                document.getElementById("error2").innerHTML = "Email doesn't match";
             }
             else{
-                alert("Email is valid.")
+                alert("Email is valid.");
             }
         }
     </script>
