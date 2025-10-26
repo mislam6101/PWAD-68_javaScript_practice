@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="max_min()">Click Here</button>
+    <script>
+        function max_min() {
+            let n1 = parseInt(prompt());
+            let n2 = parseInt(prompt());
+            let n3 = parseInt(prompt());
+
+            document.write("You type the numbers : " + n1 + ", " + n2 + ", " + n3 + "<br><br>");
+
+            let arr = [n1, n2, n3];
+
+            let x = arr[0];
+            let y = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > x) {
+                    x = arr[i];
+                }
+                if (arr[i] < y) {
+                    y = arr[i];
+                }
+            }
+
+            document.write("Max Value : " + x + "<br> <br>");
+            document.write("Min Value : " + y);
+        }
+
+    </script>
+</body>
+
+</html>

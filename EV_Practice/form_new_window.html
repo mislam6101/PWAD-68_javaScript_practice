@@ -28,11 +28,11 @@
         </select><br><br>
 
         <label for="">Skills:</label><br>
-        <input type="checkbox" name="skills[]" id="" value="C">C<br>
-        <input type="checkbox" name="skills[]" id="" value="R">R<br>
-        <input type="checkbox" name="skills[]" id="" value="Python">Python<br>
-        <input type="checkbox" name="skills[]" id="" value="PHP">PHP<br>
-        <input type="checkbox" name="skills[]" id="" value="javascrips">JavaScrips<br><br>
+        <input type="checkbox" name="skills" id="" value="C">C<br>
+        <input type="checkbox" name="skills" id="" value="R">R<br>
+        <input type="checkbox" name="skills" id="" value="Python">Python<br>
+        <input type="checkbox" name="skills" id="" value="PHP">PHP<br>
+        <input type="checkbox" name="skills" id="" value="javascrips">JavaScrips<br><br>
 
         <label for="">Address: </label><br>
         <textarea name="address" id=""></textarea><br><br>
@@ -46,6 +46,12 @@
         function FormData() {
             let x = window.open("", "ABC", "Width: 100px, Height: 200px");
 
+            let skills = [];
+            const ckbox = document.querySelectorAll('input[name="skills"]:checked');
+            for(let i = 0; i < ckbox.length; i++){
+                skills.push(ckbox[i].value);
+            }
+
 
             let name = document.myform.name.value;
             let email = document.myform.email.value;
@@ -55,6 +61,7 @@
             x.document.write("Full Name : " + name + "<br>");
             x.document.write("Email : " + email + "<br>");
             x.document.write("Gender : " + gender + "<br>");
+            x.document.write("Skills : " + skills.join(", ") + "<br>");
             x.document.write("Address : " + address + "<br>");
             x.document.write("Division : " + division + "<br>");
         }
