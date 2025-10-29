@@ -19,9 +19,10 @@
 
     <script>
         function emailvalidation(){
-            let pattern = /[A-z-9._]+@[A-z0-9.-]+\.[A-z]{2,4}$/i;
+            let pattern = /[A-z0-9._]+@[A-z0-9.-]+\.[A-z]{2,4}$/i;
             if(document.myform.email.value.search(pattern) == -1){
-                document.getElementById("error1").innerHTML = "Please enter a valid email"; 
+                document.getElementById("error1").innerHTML = "Please enter a valid email";
+                alert(document.myform.email.value.search(pattern)); 
             }
             else if(document.myform.confirmEmail.value != document.myform.email.value){
                 document.getElementById("error2").innerHTML = "Email doesn't match";
