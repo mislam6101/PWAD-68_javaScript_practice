@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Validation</title>
 </head>
+
 <body>
     <h2>Login Form</h2>
     <form action="" name="login_form">
@@ -17,25 +19,29 @@
         <button type="button" onclick="loginValidation()">Log In</button>
     </form>
     <script>
-        function loginValidation(){
+        function loginValidation() {
             let fname, pass, cPass;
-            fname  = document.login_form.name.value;
+            fname = document.login_form.name.value;
             pass = document.login_form.password.value;
             cPass = document.login_form.conf_pass.value;
 
-            if(fname == ""){
-                alert("Please Fill The Field.")
-                if(fname.length<6){
-                    alert("Must be 5 Charecter")
-                }
+            if (fname == "") {
+                alert("Please Fill The Field.");
             }
-            else if(pass == ""){
-                alert("Please Fill The Field.")
+            else if (fname.length < 5) {
+                alert("Must be 5 Charecter");
             }
-            else if(cPass == ""){
-                alert("Please Fill The Field.")
+            else if (pass == "") {
+                alert("Please Fill The Field.");
+            }
+            else if (cPass == "") {
+                alert("Please Fill The Field.");
+            }
+            else {
+                alert("Valid");
             }
         }
     </script>
 </body>
+
 </html>

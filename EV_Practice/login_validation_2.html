@@ -44,11 +44,11 @@
             else if(pass != cPass){
                 errmsg += "Password Dosen't Match";
             }
-            if(errmsg != ""){
-                alert(errmsg);
+            if(errmsg == ""){
+                document.getElementById("display").innerHTML= "Login Succesful.";
             }
             else{
-                document.getElementById("display").innerHTML= "Login Succesful.";
+                alert(errmsg);
             }
         }
     </script>

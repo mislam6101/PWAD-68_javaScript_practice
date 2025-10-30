@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form action="" name="myform">
+        Full Name: <br>
+        <input type="text" name="name" placeholder="Enter your name"><br><br>
+
+        Contact: <br>
+        <input type="text" name="cont" id="" placeholder="Enter your contact"><br><br>
+        
+        Remarks: <br>
+        <textarea name="remarks" id="" placeholder="Remarks"></textarea><br><br>
+
+        Sex: <br>
+        <input type="radio" name="sex" id="" value="Male"> Male <br>
+        <input type="radio" name="sex" id="" value="Female"> Female <br><br>
+
+        Courses: <br>
+        <input type="checkbox" name="course" id="" value="NT"> NT <br>
+        <input type="checkbox" name="course" id="" value="IAD"> IAD <br>
+        <input type="checkbox" name="course" id="" value="DDD"> DDD <br>
+        <input type="checkbox" name="course" id="" value="ESAD"> ESAD <br><br>
+
+        Location: <br>
+        <select name="location" id="">
+            <option value="" selected disabled>Select One</option>
+            <option >Banani</option>
+            <option >Dhanmondi</option>
+            <option >Mirpur</option>
+        </select><br><br>
+
+        <button type="button" onclick="formValue()">Registration</button>
+    </form>
+
+    <script>
+        function formValue(){
+            let x = window.open("", "ABC", "Width: 100px, Height: 200px");
+
+            let courses = [];
+            const ckbox = document.querySelectorAll('input[name="course"]:checked');
+            for(let i = 0; i < ckbox.length; i++){
+                courses.push(ckbox[i].value);
+            }
+
+
+            let name = document.myform.name.value;
+            let contact = document.myform.cont.value;
+            let remark = document.myform.remarks.value;
+            let sex = document.myform.sex.value;
+            let location = document.myform.location.value;
+            x.document.write("Full Name : " + name + "<br>");
+            x.document.write("Contact : " + contact + "<br>");
+            x.document.write("Remarks : " + remark + "<br>");
+            x.document.write("Sex : " + sex + "<br>");
+            x.document.write("Courses : " + courses.join(", ") + "<br>");
+            x.document.write("Location : " + location + "<br>");
+        }
+    </script>
+</body>
+</html>

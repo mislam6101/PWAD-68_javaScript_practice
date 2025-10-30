@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Email Validation</h2>
+    <form action="" name="frm">
+        Email: <br>
+        <input type="text" name="email" id="">
+        <p id="display" style="color: red;"></p>
+        <p id="display1" style="color: rgb(2, 170, 2);"></p><br>
+        <button type="button" onclick="valid()">Submit</button>
+    </form>
+
+    <script>
+        function valid(){
+            let pattern = /[A-z0-9._]+@[A-z0-9.-]+\.[A-z]{2,4}$/i;
+            if(document.frm.email.value.search(pattern) == -1){
+                document.getElementById("display").innerHTML = "Email Address is Wrong";
+                alert(document.myform.email.value.search(pattern)); 
+            }
+            else{
+                document.getElementById("display1").innerHTML = "Email Address is Correct.";
+            }
+        }
+    </script>
+</body>
+</html>
